@@ -1,0 +1,29 @@
+{
+    "name": "alexcasalboni/onetomanymixedmapping",
+    "description": "Simple example to test Doctrine-MongoDB OneToMany bidirectional mixed relationships (without targetDocument)",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "ext-mongo": "*",        
+        "symfony/symfony": "2.1.*",
+        "doctrine/orm": ">=2.2.3,<2.4-dev",
+        "doctrine/doctrine-bundle": "1.0.*",
+        "doctrine/mongodb-odm-bundle": "3.0.*",
+        "twig/extensions": "1.0.*",
+    },
+    "require-dev": {
+       
+    },    
+    "repositories": [
+        
+    ],    
+    "scripts": {
+        
+    },
+    "minimum-stability": "dev",
+    "extra": {
+       
+    }
+}
