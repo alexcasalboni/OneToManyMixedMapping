@@ -78,7 +78,7 @@ class DefaultController extends Controller
     	echo "<h2>{$p->getName()}</h2>";
     	 
     	echo implode("<br/>", array(
-    			"Person2 id: {$p->getId()}",
+    			"Person id: {$p->getId()}",
     			"name: {$p->getName()}",
     			"# items: {$p->getItems()->count()}",
     			""

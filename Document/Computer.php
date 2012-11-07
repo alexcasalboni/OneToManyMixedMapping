@@ -13,7 +13,7 @@ use AlexCasalboni\OneToManyMixedMappingBundle\Document\Person;
  * )
  * 
 **/
-class Computer {
+class Computer extends BindableItem {
 
 	/**
 	 * @MongoDB\Id
@@ -38,16 +38,6 @@ class Computer {
 	 * 
 	 */
 	protected $nCPU;
-	
-	/**
-	 * @MongoDB\ReferenceOne(
-	 * 		targetDocument="Person",
-	 * 		simple=true,
-	 * 		inversedBy="items",
-	 * 		cascade={"persist", "remove", "refresh", "merge"}
-	 * )
-	 */
-	protected $owner;
 
     /**
      * Get id
@@ -125,29 +115,4 @@ class Computer {
         return $this->nCPU;
     }
 
-    /**
-     * Set owner
-     *
-     * @param AlexCasalboniOneToManyMixedMappingBundle\Document\Person $owner
-     * @return Computer
-     */
-    public function setOwner(Person $owner)
-    {
-    	if($this->owner){
-    		$this->owner->removeItems($this);
-    	}
-    	$owner->addItems($this);
-        $this->owner = $owner;
-        return $this;
-    }
-
-    /**
-     * Get owner
-     *
-     * @return AlexCasalboniOneToManyMixedMappingBundle\Document\Person $owner
-     */
-    public function getOwner()
-    {
-        return $this->owner;
-    }
 }

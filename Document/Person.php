@@ -13,7 +13,7 @@ use JMS\SerializerBundle\Annotation\ExclusionPolicy;
  * 		repositoryClass="AlexCasalboni\OneToManyMixedMappingBundle\Repository\PersonRepository"
  * )
  * 
- * @MongoDB\ChangeTrackingPolicy("DEFERRED_EXPLICIT")
+ * @MongoDB\ChangeTrackingPolicy("DEFERRED_IMPLICIT")
  * 
  * @ExclusionPolicy("none")
  * 
@@ -34,11 +34,12 @@ class Person {
 	
 	/**
 	 * @MongoDB\ReferenceMany(
+	 *   targetDocument="BindableItem",
 	 *   discriminatorMap={
 	 *     "car"="Car",
 	 *     "pc"="Computer"
 	 *   },
-	 *   cascade={"persist", "remove", "refresh", "merge"}
+	 *   cascade={"persist", "remove", "refresh", "merge", "save"}
 	 * )
 	 * 
 	 */
