@@ -10,7 +10,6 @@ abstract class BindableItem implements IBindableItem {
 	/**
 	 * @MongoDB\ReferenceOne(
 	 * 		simple=true, 
-	 * 		inversedBy="items",
 	 * 		targetDocument="Person",
 	 * 		cascade={"persist", "remove", "refresh", "merge"}
 	 * )

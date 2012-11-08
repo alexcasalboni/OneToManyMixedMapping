@@ -107,5 +107,15 @@ class Computer extends BindableItem {
 		$this->nCPU = $nCPU;
 		return $this;
 	}
+	
+	/**
+	 * Get nCPU
+	 *
+	 * @param int $nCPU
+	 * @return Computer
+	 */
+	public function getNCPU() {
+		return $this->nCPU;
+	}
 
 }
