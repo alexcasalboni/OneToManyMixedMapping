@@ -59,7 +59,7 @@ class DefaultController extends Controller
     	$item->setOwner($person);
     	
     	$dm->persist($item);
-    	$dm->persist($person);
+    	//$dm->persist($person);
     	//$dm->persist($person2); //without this, person2 is not updated!
     	
     	//$dm->persist($person);

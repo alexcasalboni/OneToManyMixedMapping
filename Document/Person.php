@@ -34,7 +34,6 @@ class Person {
 	
 	/**
 	 * @MongoDB\ReferenceMany(
-	 *   targetDocument="BindableItem",
 	 *   discriminatorMap={
 	 *     "car"="Car",
 	 *     "pc"="Computer"
