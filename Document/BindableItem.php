@@ -4,14 +4,6 @@ namespace AlexCasalboni\OneToManyMixedMappingBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
-/**
- * Abstract Bindable Item
- *
- * @MongoDB\MappedSuperclass()
- * @MongoDB\ChangeTrackingPolicy("DEFERRED_IMPLICIT")
- * 
- * 
- */
 
 abstract class BindableItem implements IBindableItem {
 
@@ -20,28 +12,27 @@ abstract class BindableItem implements IBindableItem {
 	 * 		simple=true, 
 	 * 		inversedBy="items",
 	 * 		targetDocument="Person",
-	 * 		cascade={"persist", "remove", "refresh", "merge", "save"}
+	 * 		cascade={"persist", "remove", "refresh", "merge"}
 	 * )
+	 * 
+	 * @var Person
+	 * 
 	 */
 	protected $owner;
 	
 	
 	
 	/**
-	 * Get owner
-	 *
-	 * @return Person $owner
+	 * (non-PHPdoc)
+	 * @see AlexCasalboni\OneToManyMixedMappingBundle\Document.IBindableItem::getOwner()
 	 */
 	public function getOwner() {
 		return $this->owner;
 	}
 	
-	
 	/**
-	 * Set category
-	 *
-	 * @param Person $category
-	 * @return BindableItem
+	 * (non-PHPdoc)
+	 * @see AlexCasalboni\OneToManyMixedMappingBundle\Document.IBindableItem::setOwner()
 	 */
 	public function setOwner(Person $owner) {
 		if($this->getOwner()){

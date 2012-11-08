@@ -38,7 +38,7 @@ class Person {
 	 *     "car"="Car",
 	 *     "pc"="Computer"
 	 *   },
-	 *   cascade={"persist", "remove", "refresh", "merge", "save"}
+	 *   cascade={"persist", "remove", "refresh", "merge"}
 	 * )
 	 * 
 	 */
@@ -62,7 +62,7 @@ class Person {
      */
     public function preSave(){
     	
-    	echo "calling preSave() on person " . ($this->getId()?$this->getId():"NEW") . "<br/>\n";
+    	echo "<br/>\ncalling preSave() on person " . ($this->getId()?$this->getId():"NEW") . "<br/>\n";
     	
     	$this->updateTime();
     	

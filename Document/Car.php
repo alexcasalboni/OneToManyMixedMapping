@@ -33,6 +33,16 @@ class Car extends BindableItem {
 	 */
 	protected $weight;
 
+	
+	/**
+	 * @MongoDB\PreUpdate
+	 * @MongoDB\PrePersist
+	 */
+	public function preSave(){
+		echo "<br/>\nsaving Car: {$this->getId()} <br/>\n";
+	}
+	
+	
     /**
      * Get id
      *
