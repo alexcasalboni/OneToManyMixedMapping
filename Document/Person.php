@@ -109,6 +109,7 @@ class Person {
     {
     	if(!$this->items->contains($items)){
     		$this->items->add($items);
+    		$this->updateTime();
     	}
     }
     

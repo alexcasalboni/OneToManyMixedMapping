@@ -2,6 +2,8 @@
 
 namespace AlexCasalboni\OneToManyMixedMappingBundle\Controller;
 
+use Doctrine\ODM\MongoDB\DocumentManager;
+
 use Doctrine\ODM\MongoDB\DocumentRepository;
 
 use AlexCasalboni\OneToManyMixedMappingBundle\Document\Person;
@@ -33,7 +35,6 @@ class DefaultController extends Controller
     
     /**
      * @Route("/")
-     * @Template()
      */
     public function checkAction()
     {
@@ -59,18 +60,20 @@ class DefaultController extends Controller
     	$item->setOwner($person);
     	
     	$dm->persist($item);
+    	
+    	
     	//$dm->persist($person);
     	//$dm->persist($person2); //without this, person2 is not updated!
     	
-    	//$dm->persist($person);
-    	//$dm->persist($person2);
+    	//$dm->flush($item);
+    	//$dm->flush($person);
     	$dm->flush();
     	
     	echo "<h1>After edit</h1>";
     	$this->printPerson($person);
     	$this->printPerson($person2);
     	
-    	die();
+    	die("finished");
     }
     
     
